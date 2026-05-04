@@ -174,7 +174,7 @@ export const PORTFOLIO_DATA = {
     {
       id: "proj-6",
       title: "Cybersecurity in Additive Manufacturing: Systematic Review",
-      year: "2024",
+      year: "in review",
       description:
         "Co-authored a systematic review of data analytics for cyber-physical security in additive manufacturing, identifying key challenges and future research directions. Submitted to Journal of Manufacturing Systems.",
       tags: [
