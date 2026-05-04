@@ -28,7 +28,7 @@ export const CONTENT = {
   },
 
   skills: {
-    heading: "Expertise & Methodology",
+    heading: "Skills",
   },
 
   experience: {
@@ -75,4 +75,5 @@ export const CONTENT = {
     ],
     copyright: `© ${new Date().getFullYear()} All rights reserved.`,
   },
-};
+}
+;

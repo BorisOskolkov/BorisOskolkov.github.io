@@ -27,7 +27,14 @@ export const PORTFOLIO_DATA = {
     {
       category: "Programming Languages",
       icon: Code,
-      items: ["Python", "MATLAB", "R", "C/C++", "Solidity"],
+      items: [
+        "Python",
+        "MATLAB",
+        "R",
+        "C/C++",
+        "Solidity",
+        "Embedded C/C++ (ARM Cortex-M, ESP32)",
+      ],
     },
     {
       category: "Machine Learning",
@@ -56,26 +63,19 @@ export const PORTFOLIO_DATA = {
       ],
     },
     {
-      category: "Research & Academic",
+      category: "Engineering & Research",
       icon: BookOpen,
       items: [
+        "PCB Design (Altium Designer)",
+        "CAD Modeling",
+        "Git",
+        "SQL",
         "Additive Manufacturing",
         "Blockchain / Smart Contracts",
         "Cybersecurity",
         "Quality Control",
         "Curriculum Design",
         "Teaching",
-      ],
-    },
-    {
-      category: "Engineering & Embedded",
-      icon: Cpu,
-      items: [
-        "Embedded C/C++ (ARM Cortex-M, ESP32)",
-        "PCB Design (Altium Designer)",
-        "CAD Modeling",
-        "Git",
-        "SQL",
       ],
     },
   ],
