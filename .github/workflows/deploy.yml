@@ -29,8 +29,15 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund --legacy-peer-deps
 
-      - name: Fetch CV PDF
-        run: curl -L -f -o public/cv.pdf "https://pub.hyperagent.com/api/published/vBdmnL66HF0On0OWslrShQ/cv.pdf"
+      - name: Fetch CV and original-quality images
+        run: |
+          mkdir -p public/images
+          curl -L -f -o public/cv.pdf "https://pub.hyperagent.com/api/published/vBdmnL66HF0On0OWslrShQ/cv.pdf"
+          curl -L -f -o public/images/headshot.png "https://pub.hyperagent.com/api/published/M6EHW40yJNJBi1UCK4c2mA/headshot.png"
+          curl -L -f -o public/images/ieee-case-2025.jpg "https://pub.hyperagent.com/api/published/QdqQkf6AfHxRCsWt-fcrRA/ieee-case-2025.jpg"
+          curl -L -f -o public/images/inhaler-innovations-2025.jpg "https://pub.hyperagent.com/api/published/UhP7nUHrRGEqaFqPNj1WUQ/inhaler-innovations-2025.jpg"
+          curl -L -f -o public/images/qtag-senior-design.jpg "https://pub.hyperagent.com/api/published/_RZmf0ZYtVhEYM78HTf82Q/qtag-senior-design.jpg"
+          curl -L -f -o public/images/riata-pitch-winner.jpg "https://pub.hyperagent.com/api/published/JtH33WxtZlpr2sdEpNwOHQ/riata-pitch-winner.jpg"
 
       - name: Build site
         env:

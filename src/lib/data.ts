@@ -16,7 +16,7 @@ export const PORTFOLIO_DATA = {
     email: "boris.oskolkov@okstate.edu",
     location: "Stillwater, OK, USA",
     bio: "PhD candidate in Industrial Engineering at Oklahoma State University, researching incremental machine learning, cybersecurity in smart manufacturing, and additive manufacturing process monitoring. I develop data-driven solutions that bridge advanced ML methods and real-world engineering systems.",
-    avatarUrl: `${import.meta.env.BASE_URL}images/headshot.jpg`,
+    avatarUrl: `${import.meta.env.BASE_URL}images/headshot.png`,
     socials: {
       linkedin: "https://linkedin.com/in/boris-oskolkov",
       github: "https://github.com/borisOskolkov",
