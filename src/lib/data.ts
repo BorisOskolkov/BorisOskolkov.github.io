@@ -81,6 +81,23 @@ export const PORTFOLIO_DATA = {
   ],
   projects: [
     {
+      id: "proj-5",
+      title:
+        "Knowledge Distillation for Domain Incremental Learning in Smart Manufacturing",
+      year: "2026",
+      description:
+        "Proposed a knowledge distillation-empowered domain incremental learning method with flexible model selection for smart manufacturing applications. Published in Journal of Manufacturing Systems (2026).",
+      tags: [
+        "Knowledge Distillation",
+        "Domain Incremental Learning",
+        "Smart Manufacturing",
+        "Journal of Manufacturing Systems",
+      ],
+      links: {
+        paper: "https://doi.org/10.1016/j.jmsy.2026.04.011",
+      },
+    },
+    {
       id: "proj-1",
       title:
         "KAN-enabled Incremental Learning for Additive Manufacturing Monitoring",
@@ -153,21 +170,6 @@ export const PORTFOLIO_DATA = {
       links: {
         paper: "https://doi.org/10.1115/1.4063859",
       },
-    },
-    {
-      id: "proj-5",
-      title:
-        "Knowledge Distillation for Domain Incremental Learning in Smart Manufacturing",
-      year: "2026",
-      description:
-        "Proposed a knowledge distillation-empowered domain incremental learning method with flexible model selection for smart manufacturing applications. Submitted to NAMRC 54 (2026).",
-      tags: [
-        "Knowledge Distillation",
-        "Domain Incremental Learning",
-        "Smart Manufacturing",
-        "NAMRC",
-      ],
-      links: {},
     },
     {
       id: "proj-6",
