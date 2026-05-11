@@ -1,0 +1,47 @@
+name: Refresh Scholar citations
+
+on:
+  schedule:
+    # Daily at 06:00 UTC
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: refresh-citations
+      cancel-in-progress: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Need write token to push back to the branch
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet requests beautifulsoup4
+
+      - name: Fetch citation count
+        id: fetch
+        run: python scripts/fetch_citations.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet public/scholar.json; then
+            echo "No change in scholar.json — skipping commit."
+            exit 0
+          fi
+          git add public/scholar.json
+          git commit -m "chore: refresh Scholar citation count"
+          git push
