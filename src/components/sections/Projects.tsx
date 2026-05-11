@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, FileText, ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { CitationBadge } from "@/components/CitationBadge";
 import { PORTFOLIO_DATA } from "@/lib/data";
 import { CONTENT } from "@/lib/content";
 
@@ -111,8 +110,7 @@ export function Projects() {
           ))}
         </motion.div>
 
-        <div className="mt-10 flex flex-col items-center gap-4">
-          <CitationBadge />
+        <div className="mt-10 text-center">
           <a
             href={CONTENT.projects.scholarHref}
             target="_blank"
