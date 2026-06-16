@@ -275,11 +275,12 @@ export const PORTFOLIO_DATA = {
 export type GalleryItem = {
   id: string;
   title: string;
-  category: "project" | "presentation";
+  category: "project" | "presentation" | "poster";
   description?: string;
   date?: string;
   imageUrl?: string;
   link?: string;
+  pdfUrl?: string;
   tags?: string[];
 };
 
@@ -342,5 +343,58 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "Additive Manufacturing",
       "IEEE CASE",
     ],
+  },
+
+  // ── Poster presentations (placeholders) ───────────────────────────────
+  // To add a real poster, set `pdfUrl` to your PDF. Two options:
+  //   1) Best (same-origin, renders inline in the popup): drop the PDF in
+  //      public/posters/ and use `${import.meta.env.BASE_URL}posters/my.pdf`.
+  //   2) Any public URL also works; it opens via the "Open PDF" button and,
+  //      if the host allows embedding, renders inline too.
+  // Edit the title, date, description, and tags. Duplicate/remove blocks as
+  // needed. The pdfUrls below are temporary hosted placeholders.
+  {
+    id: "poster-1",
+    title: "Poster Presentation 1 — Title TBD",
+    category: "poster",
+    description:
+      "Placeholder for a poster presentation. Replace the title, description, date, and tags — and point pdfUrl at your real poster PDF.",
+    date: "Year TBD",
+    pdfUrl:
+      "https://pub.hyperagent.com/api/published/pbf01KV960AR0_SWPJKW5JA22EV1D0/poster-1.pdf",
+    tags: ["Poster", "Conference TBD"],
+  },
+  {
+    id: "poster-2",
+    title: "Poster Presentation 2 — Title TBD",
+    category: "poster",
+    description:
+      "Placeholder for a poster presentation. Replace the title, description, date, and tags — and point pdfUrl at your real poster PDF.",
+    date: "Year TBD",
+    pdfUrl:
+      "https://pub.hyperagent.com/api/published/pbf01KV960B1V_HERKDKYN0BWFYRXQ/poster-2.pdf",
+    tags: ["Poster", "Conference TBD"],
+  },
+  {
+    id: "poster-3",
+    title: "Poster Presentation 3 — Title TBD",
+    category: "poster",
+    description:
+      "Placeholder for a poster presentation. Replace the title, description, date, and tags — and point pdfUrl at your real poster PDF.",
+    date: "Year TBD",
+    pdfUrl:
+      "https://pub.hyperagent.com/api/published/pbf01KV960BVB_YECJ7MF7ZDBZC1WK/poster-3.pdf",
+    tags: ["Poster", "Conference TBD"],
+  },
+  {
+    id: "poster-4",
+    title: "Poster Presentation 4 — Title TBD",
+    category: "poster",
+    description:
+      "Placeholder for a poster presentation. Replace the title, description, date, and tags — and point pdfUrl at your real poster PDF.",
+    date: "Year TBD",
+    pdfUrl:
+      "https://pub.hyperagent.com/api/published/pbf01KV960CKJ_E0GRGN0SCW5J7QE4/poster-4.pdf",
+    tags: ["Poster", "Conference TBD"],
   },
 ];
