@@ -345,14 +345,66 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     ],
   },
 
-  // ── Poster presentations (placeholders) ───────────────────────────────
-  // To add a real poster, set `pdfUrl` to your PDF. Two options:
-  //   1) Best (same-origin, renders inline in the popup): drop the PDF in
-  //      public/posters/ and use `${import.meta.env.BASE_URL}posters/my.pdf`.
-  //   2) Any public URL also works; it opens via the "Open PDF" button and,
-  //      if the host allows embedding, renders inline too.
-  // Edit the title, date, description, and tags. Duplicate/remove blocks as
-  // needed. The pdfUrls below are temporary hosted placeholders.
+  // ── Poster presentations ──────────────────────────────────────────────
+  // Each card opens the popup with the PDF rendered inline (iframe) plus an
+  // "Open PDF" button. To add another poster, copy a block and set pdfUrl to
+  // your PDF — either a same-origin path (drop the file in public/posters/ and
+  // use `${import.meta.env.BASE_URL}posters/my.pdf`) or any public URL.
+  {
+    id: "poster-msec-2026",
+    title:
+      "Kolmogorov-Arnold Network-Enabled Variational Autoencoder for Diagnostic Imaging-Based Defect Detection in Manufacturing",
+    category: "poster",
+    description:
+      "Poster for ASME MSEC 2026 / NAMRC 54 (State College, PA). Replaces the fixed activation functions in a variational autoencoder's bottleneck with Kolmogorov-Arnold Networks (KANs) for unsupervised, image-based defect detection in smart manufacturing. KAN variants widen the separation between normal and anomalous reconstruction-error distributions; the MonKAN variant achieves the highest Cohen's d and AUC-ROC. With Emmanuel Yangue; advisor Dr. Chenang Liu, Oklahoma State University.",
+    date: "June 2026",
+    pdfUrl:
+      "https://pub.hyperagent.com/api/published/pbf01KV97KWA4_TSTVRD4Y6N6VCXR5/MSEC-2026-Poster_Boris_v0.8.pdf",
+    tags: [
+      "KAN",
+      "Variational Autoencoder",
+      "Defect Detection",
+      "Diagnostic Imaging",
+      "ASME MSEC 2026",
+    ],
+  },
+  {
+    id: "poster-informs-2024",
+    title:
+      "Knowledge Distillation-based Incremental Learning with Integration of Transformer for Online Process Monitoring",
+    category: "poster",
+    description:
+      "Presented at the 2024 INFORMS Annual Meeting (Seattle, WA). Combines knowledge-distillation-based incremental learning with a Transformer encoder to combat catastrophic forgetting in online process monitoring of cyber-physical and advanced-manufacturing data streams. Using the Transformer only in the pre-training phase, the approach converges faster, overfits less, reaches a higher F-score at the same epoch, and keeps computational cost stable over time. With Zhangyue Shi; advisor Dr. Chenang Liu, Oklahoma State University.",
+    date: "October 2024",
+    pdfUrl:
+      "https://pub.hyperagent.com/api/published/pbf01KV97KVZX_83EEAVW2QH57SAWQ/QSR%20Poster_Boris%20Oskolkov_Oklahoma%20State%20University_Incremental%20learning_Transformer.pdf",
+    tags: [
+      "Incremental Learning",
+      "Knowledge Distillation",
+      "Transformer",
+      "Process Monitoring",
+      "INFORMS 2024",
+    ],
+  },
+  {
+    id: "poster-embc-2024",
+    title:
+      "Cost-Saving Data-Driven Diabetic Retinopathy Prediction via a Sampling-Empowered Incremental Learning Approach",
+    category: "poster",
+    description:
+      "Poster at IEEE EMBC 2024. Introduces Batch Balanced Weighted Sampling for Incremental Learning (IL-BBWS) to address class imbalance and catastrophic forgetting in EHR-based diabetic-retinopathy prediction — replaying a reversed-class-distribution sample of historical data alongside each incoming batch to cut retraining cost while sustaining accuracy. With Anastasiia Oskolkova, Tieming Liu; advisor Dr. Chenang Liu, Oklahoma State University.",
+    date: "July 2024",
+    pdfUrl:
+      "https://pub.hyperagent.com/api/published/pbf01KV97M6JD_Y53AM58BG65WMMVM/EMBC24%20poster.pdf",
+    link: "https://doi.org/10.1109/EMBC53108.2024.10782548",
+    tags: [
+      "Incremental Learning",
+      "Healthcare AI",
+      "Diabetic Retinopathy",
+      "EHR",
+      "IEEE EMBC 2024",
+    ],
+  },
   {
     id: "poster-msec-2023",
     title: "Securing Manufacturing Data by Integration of Blockchain and Online ML",
@@ -369,38 +421,5 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "Cyber-Physical Systems",
       "ASME MSEC 2023",
     ],
-  },
-  {
-    id: "poster-2",
-    title: "Poster Presentation 2 — Title TBD",
-    category: "poster",
-    description:
-      "Placeholder for a poster presentation. Replace the title, description, date, and tags — and point pdfUrl at your real poster PDF.",
-    date: "Year TBD",
-    pdfUrl:
-      "https://pub.hyperagent.com/api/published/pbf01KV960B1V_HERKDKYN0BWFYRXQ/poster-2.pdf",
-    tags: ["Poster", "Conference TBD"],
-  },
-  {
-    id: "poster-3",
-    title: "Poster Presentation 3 — Title TBD",
-    category: "poster",
-    description:
-      "Placeholder for a poster presentation. Replace the title, description, date, and tags — and point pdfUrl at your real poster PDF.",
-    date: "Year TBD",
-    pdfUrl:
-      "https://pub.hyperagent.com/api/published/pbf01KV960BVB_YECJ7MF7ZDBZC1WK/poster-3.pdf",
-    tags: ["Poster", "Conference TBD"],
-  },
-  {
-    id: "poster-4",
-    title: "Poster Presentation 4 — Title TBD",
-    category: "poster",
-    description:
-      "Placeholder for a poster presentation. Replace the title, description, date, and tags — and point pdfUrl at your real poster PDF.",
-    date: "Year TBD",
-    pdfUrl:
-      "https://pub.hyperagent.com/api/published/pbf01KV960CKJ_E0GRGN0SCW5J7QE4/poster-4.pdf",
-    tags: ["Poster", "Conference TBD"],
   },
 ];
