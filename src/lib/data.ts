@@ -354,15 +354,21 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   // Edit the title, date, description, and tags. Duplicate/remove blocks as
   // needed. The pdfUrls below are temporary hosted placeholders.
   {
-    id: "poster-1",
-    title: "Poster Presentation 1 — Title TBD",
+    id: "poster-msec-2023",
+    title: "Securing Manufacturing Data by Integration of Blockchain and Online ML",
     category: "poster",
     description:
-      "Placeholder for a poster presentation. Replace the title, description, date, and tags — and point pdfUrl at your real poster PDF.",
-    date: "Year TBD",
+      "Poster presented at ASME MSEC 2023 (International Manufacturing Science and Engineering Conference, paper MSEC2023-112866). Proposes a proof-of-concept that pairs blockchain with an online machine-learning classifier to secure and validate manufacturing data streams in real time — detecting tampering (deletion, alteration, replacement) while improving validation rate from 0.858 (offline) to 0.986 (online). Advisor: Dr. Chenang Liu, Oklahoma State University.",
+    date: "June 2023",
     pdfUrl:
-      "https://pub.hyperagent.com/api/published/pbf01KV960AR0_SWPJKW5JA22EV1D0/poster-1.pdf",
-    tags: ["Poster", "Conference TBD"],
+      "https://pub.hyperagent.com/api/published/pbf01KV975CYD_A2T0F2ZFNNHW4FP0/MSEC2023_112866_Oskolkov.pdf",
+    tags: [
+      "Blockchain",
+      "Online ML",
+      "Manufacturing Security",
+      "Cyber-Physical Systems",
+      "ASME MSEC 2023",
+    ],
   },
   {
     id: "poster-2",
