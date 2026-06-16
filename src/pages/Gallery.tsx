@@ -5,13 +5,16 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GALLERY_ITEMS, type GalleryItem } from "@/lib/data";
 
-type Filter = "all" | "project" | "presentation";
+type Filter = "all" | "project" | "presentation" | "poster";
 
 const FILTERS: { label: string; value: Filter }[] = [
   { label: "All", value: "all" },
   { label: "Projects", value: "project" },
   { label: "Presentations", value: "presentation" },
+  { label: "Posters", value: "poster" },
 ];
+
+const SECONDARY_BADGE = new Set(["presentation", "poster"]);
 
 function GalleryCard({ item, onClick }: { item: GalleryItem; onClick: () => void }) {
   return (
@@ -32,6 +35,13 @@ function GalleryCard({ item, onClick }: { item: GalleryItem; onClick: () => void
             alt={item.title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
+        ) : item.pdfUrl ? (
+          <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-primary/10 to-muted">
+            <FileText size={40} className="text-primary/40" />
+            <span className="text-xs font-medium uppercase tracking-wider text-primary/50">
+              PDF Poster
+            </span>
+          </div>
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-muted">
             {item.category === "presentation" ? (
@@ -43,7 +53,7 @@ function GalleryCard({ item, onClick }: { item: GalleryItem; onClick: () => void
         )}
         <div className="absolute top-3 left-3">
           <Badge
-            variant={item.category === "presentation" ? "secondary" : "default"}
+            variant={SECONDARY_BADGE.has(item.category) ? "secondary" : "default"}
             className="text-xs capitalize"
           >
             {item.category}
@@ -114,10 +124,20 @@ function ItemModal({ item, onClose }: { item: GalleryItem; onClose: () => void }
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
           onClick={(e) => e.stopPropagation()}
-          className="bg-card border border-border/50 rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+          className={`bg-card border border-border/50 rounded-3xl shadow-2xl w-full max-h-[90vh] overflow-y-auto ${
+            item.pdfUrl ? "max-w-5xl" : "max-w-2xl"
+          }`}
         >
-          {/* Image */}
-          {item.imageUrl ? (
+          {/* Media: PDF (poster) > image > icon fallback */}
+          {item.pdfUrl ? (
+            <div className="w-full rounded-t-3xl overflow-hidden bg-muted">
+              <iframe
+                src={`${item.pdfUrl}#toolbar=0&navpanes=0&view=FitH`}
+                title={item.title}
+                className="w-full h-[68vh] border-0"
+              />
+            </div>
+          ) : item.imageUrl ? (
             <div className="relative w-full aspect-video overflow-hidden rounded-t-3xl">
               <img
                 src={item.imageUrl}
@@ -140,7 +160,7 @@ function ItemModal({ item, onClose }: { item: GalleryItem; onClose: () => void }
             <div className="flex items-start justify-between gap-4 mb-4">
               <div className="flex-1">
                 <Badge
-                  variant={item.category === "presentation" ? "secondary" : "default"}
+                  variant={SECONDARY_BADGE.has(item.category) ? "secondary" : "default"}
                   className="text-xs capitalize mb-3"
                 >
                   {item.category}
@@ -190,6 +210,19 @@ function ItemModal({ item, onClose }: { item: GalleryItem; onClose: () => void }
                 >
                   <FileText size={16} />
                 </a>
+              )}
+              {item.pdfUrl && (
+                <Button
+                  asChild
+                  variant="default"
+                  size="sm"
+                  className="rounded-full gap-2"
+                >
+                  <a href={item.pdfUrl} target="_blank" rel="noreferrer">
+                    <ExternalLink size={15} />
+                    Open PDF
+                  </a>
+                </Button>
               )}
               <Button variant="outline" size="sm" className="rounded-full" onClick={onClose}>
                 Close
